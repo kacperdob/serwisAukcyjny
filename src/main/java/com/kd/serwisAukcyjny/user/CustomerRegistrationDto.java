@@ -1,8 +1,13 @@
 package com.kd.serwisAukcyjny.user;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+@Getter
+@Setter
 public class CustomerRegistrationDto {
     @Pattern(regexp = "^[A-Z][a-z]{2,}$", message = "\"Wymagane przynajmniej 3 znaki(pierwsza litera duża, reszta małe).")
     private String firstName;
@@ -28,7 +33,8 @@ public class CustomerRegistrationDto {
     private String zipCode;
     @Pattern(regexp="^([1-9]{1,}([A-Z]{1,3})?)", message = "Pole musi zostać wypełnione")
     private String homeNumber;
-    @Pattern(regexp="^([1-9]{1,}([A-Z]{1,3})?)", message = "Pole musi zostać wypełnione")
+    @Pattern(regexp="^([1-9]{1,}([A-Z]{1,3})?)?", message = "Pole musi zostać wypełnione")
     private String flatNumber;
+private boolean premium;
 
 }

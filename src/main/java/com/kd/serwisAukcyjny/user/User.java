@@ -16,7 +16,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) //sposób dziedziczenia
 public class User {
-    private String email;
     private String firstName;
     private String lastName;
     private String password;

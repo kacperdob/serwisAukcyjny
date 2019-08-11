@@ -21,6 +21,8 @@ import static org.hibernate.validator.internal.util.CollectionHelper.newArrayLis
 @Entity
 @DiscriminatorValue("C")
 public class Customer extends User {
+    boolean premium;
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Bought> boughtList = newArrayList();
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
