@@ -1,5 +1,6 @@
 package com.kd.serwisAukcyjny.user;
 
+import com.kd.serwisAukcyjny.BaseEntity;
 import com.kd.serwisAukcyjny.DataBuilder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) //sposób dziedziczenia
-public class User {
+public class User extends BaseEntity {
     private String firstName;
     private String lastName;
     private String password;

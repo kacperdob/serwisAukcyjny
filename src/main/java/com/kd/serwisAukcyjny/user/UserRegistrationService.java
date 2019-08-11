@@ -21,7 +21,7 @@ public class UserRegistrationService {
 
     public void registerUser(CustomerRegistrationDto customerRegistrationDto) {
         Customer user = UserRegistrationDtoToUserBuilder.rewriteToCustomer(customerRegistrationDto, passwordEncoder);
-        if (usersRepository.existsByUsername(user.getName())) {
+        if (usersRepository.existsByName(user.getName())) {
             throw new UserExistException("User with username " + user.getName() + "already exists in database");
         } else {
             addUser(user);

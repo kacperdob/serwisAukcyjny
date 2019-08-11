@@ -1,6 +1,7 @@
 package com.kd.serwisAukcyjny;
 
 import com.google.gson.Gson;
+import com.kd.serwisAukcyjny.cart.Cart;
 import com.kd.serwisAukcyjny.user.RoleTypeEnum;
 import lombok.Getter;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -15,8 +16,8 @@ import java.util.Optional;
 @Service
 @SessionScope
 public class UserContextService {
-//    @Getter
-//    private Cart cart = new Cart();
+    @Getter
+    private Cart cart = new Cart();
 
     private static Gson gson = new Gson();
 
