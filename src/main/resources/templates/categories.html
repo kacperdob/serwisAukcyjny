@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kategorie</title>
+    <th:block th:replace="fragments/header :: header-css"></th:block>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<form action="/admin/categories">
+    <input type="text" name="searchText">
+    <button value="search"> szukaj</button>
+</form>
+<div id="container"></div>
+
+<script th:inline="javascript">
+    $(function () {
+        $('#container').jstree({
+            'core': {
+                'data':
+                    [[${catsdata}]],
+                "check_callback": true
+
+            },
+            "plugins": ["dnd"]
+        })
+        // $('#container').on('move_node.jstree', function (e, data) {
+        //     console.log(data)
+        //     $.post("/admin/categories/moveCat", {oldParentId: data.old_parent, newParentId: data.parent, movedId: data.node.id})
+        // })
+    });
+</script>
+</body>
+</html>

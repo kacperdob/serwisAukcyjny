@@ -4,7 +4,7 @@
     <title>REJESTRACJA</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <th:block th:replace="fragments/header :: header-css"/>
-    <link rel="stylesheet" th:href="@{/css/signin.css}"/>
+    <link rel="stylesheet" th:href="@{/singin.css}"/>
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
@@ -58,7 +58,7 @@
     <div class="error" th:errors="*{email}"></div>
 
     <label for="passw">Hasło:</label>
-    <input id="passw" type="text" th:field="*{password}"  autofocus class="form-control"/>
+    <input id="passw" type="password" th:field="*{password}"  autofocus class="form-control"/>
     <div class="error" th:errors="*{password}"></div>
 
     <label for="phone">Numer Telefonu:</label>

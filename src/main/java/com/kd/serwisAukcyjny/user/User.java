@@ -20,6 +20,7 @@ public class User extends BaseEntity {
     private String firstName;
     private String lastName;
     private String password;
+    @Column(length = 300)
     private String name;
     private UserAddress userAddress;
     private DataBuilder createAccountDate;

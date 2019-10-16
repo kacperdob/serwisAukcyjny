@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj aukcje</title>
+    <th:block th:replace="fragments/header :: header-css"></th:block>
+
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<form th:action="@{/admin/product/add}" method="post">
+
+    <input type="text" name="title" placeholder="Tytuł">
+    <input type="text" name="description" placeholder="Opis">
+<!--    <input type="text" name="pictureURL" placeholder="Url obrazka">-->
+    <input type="number" step="0.01" name="minPrice" placeholder="Cena minimalna">
+    <input type="number" step="0.01" name="buyNowPrice" placeholder="Cena Kup teraz">
+<!--    <select name="productType">-->
+<!--        <option th:value="''" th:text="'Typ produktu'"></option>-->
+<!--        <option th:each="pt : ${auctionType}" th:value="${at}" th:text="${at.type}"></option>-->
+<!--    </select>-->
+
+    <input id="premium" type="checkbox" name="promote"/>
+    <label for="premium">Aukcja wyrozniona</label>
+
+    <button>Dodaj produkt</button>
+
+</form>
+
+
+</body>
+</html>

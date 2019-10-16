@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .password(bCryptPasswordEncoder.encode("admin12345"))
                 .roles("ADMIN");
         auth.jdbcAuthentication()
-                .usersByUsernameQuery("SELECT u.name, u.password_hash,1 FROM user u WHERE u.name=?")
+                .usersByUsernameQuery("SELECT u.name, u.password,1 FROM user u WHERE u.name=?")
                 .authoritiesByUsernameQuery("SELECT u.name, r.role_name, 1 " +
                         "FROM user u " +
                         "INNER JOIN user_role ur ON ur.user_id = u.id " +
